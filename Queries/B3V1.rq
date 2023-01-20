@@ -1,0 +1,19 @@
+PREFIX bkr_meta:<http://mor.nlm.nih.gov/bkr/META_> 
+PREFIX bkr_sn:<http://mor.nlm.nih.gov/bkr/SEMNET_> 
+PREFIX provenir:<http://knoesis.wright.edu/provenir/> 
+PREFIX pubmed:<http://mor.nlm.nih.gov/bkr/PUBMED_>  
+SELECT (COUNT(*) as ?Triples)  WHERE { 
+<< bkr_meta:C0543467-INST bkr_sn:TREATS ?o1 >> provenir:derives_from pubmed:10979521-INST . 
+<< ?o1 bkr_sn:CAUSES ?o2 >> provenir:derives_from ?pmid2 . 
+<< ?o2 bkr_sn:AFFECTS ?o3 >> provenir:derives_from ?pmid3 .
+}
+
+#first two only 0
+# first one only: 1
+# second only: 538857, 14.111, 690.226
+# third only: 991875 , 24.071, 678.083
+#<< bkr_meta:C0543467-INST bkr_sn:TREATS ?o1 >> provenir:derives_from pubmed:10979521-INST .
+#"select (COUNT(*) as ?Triples) where { 
+#<< bkr_meta:C0543467-INST bkr_sn:TREATS ?o1 >> provenir:derives_from ?pmid? .  
+#<< ?o1 bkr_sn:CAUSES ?o2 >> provenir:derives_from ?pmid2 . 
+#}"

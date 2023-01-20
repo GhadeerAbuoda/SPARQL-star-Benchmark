@@ -1,0 +1,9 @@
+PREFIX bkr_meta:<http://mor.nlm.nih.gov/bkr/META_> 
+PREFIX bkr_sn:<http://mor.nlm.nih.gov/bkr/SEMNET_> 
+PREFIX provenir:<http://knoesis.wright.edu/provenir/> 
+PREFIX pubmed:<http://mor.nlm.nih.gov/bkr/PUBMED_>  
+SELECT (COUNT(*) as ?Triples)  WHERE { 
+<< bkr_meta:C0543467-INST bkr_sn:TREATS ?o1 >> provenir:derives_from pubmed:10979521-INST . 
+<< ?o1 bkr_sn:CAUSES ?o2 >> provenir:derives_from ?pmid2 . 
+?t provenir:derives_from ?pmid3 .
+}

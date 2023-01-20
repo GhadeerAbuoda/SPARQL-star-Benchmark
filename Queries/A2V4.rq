@@ -1,0 +1,8 @@
+PREFIX bkr_meta:<http://mor.nlm.nih.gov/bkr/META_> 
+PREFIX bkr_sn:<http://mor.nlm.nih.gov/bkr/SEMNET_> 
+PREFIX provenir:<http://knoesis.wright.edu/provenir/> 
+PREFIX pubmed:<http://mor.nlm.nih.gov/bkr/PUBMED_>  
+SELECT (COUNT(*) as ?Triples)  WHERE { 
+<< ?s bkr_sn:TREATS ?o1 >> ?p ?o2 . 
+
+}

@@ -1,0 +1,13 @@
+PREFIX  bkr:  <http://mor.nlm.nih.gov/bkr/>
+PREFIX  provenir: <http://knoesis.wright.edu/provenir/>
+PREFIX  pubmed: <http://mor.nlm.nih.gov/bkr/PUBMED_>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT  ?s ?p ?o
+WHERE
+  { << ?s ?p ?o >>
+              provenir:derives_from  ?pm
+  }
+#group by ?s ?p ?o
+#HAVING (COUNT(*) > 200)
+#(COUNT(*) as ?Triples) provenir:derives_from
