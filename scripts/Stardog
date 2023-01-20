@@ -1,0 +1,21 @@
+
+## start stardog server: 
+stardog-admin server start 
+
+## stadog creating RDF-star database; should use edge.properties=true argument
+stardog/stardog-8.1.0/bin$ bash stardog-admin db create -n starDB -o edge.properties=true  -- dataset.ttls 
+
+##Bulk loading data to new database starDB.
+#Loaded 94,662,890 triples to starDB from 1 file(s) in 00:17:48.309 @ 88.6K triples/sec.
+#Successfully created database 'starDB'.
+## set querytimeout
+./stardog-admin metadata set -o  query.timeout=30m -- starDB
+
+## Querying stardog:
+
+for filename in *.rq; do ##change here
+Var1="${filename}";
+bash  stardog/stardog-8.1.0/bin/stardog query execute DBstar $Var1
+done
+## stop server
+./stardog-admin server stop
