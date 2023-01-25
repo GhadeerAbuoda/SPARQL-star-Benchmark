@@ -1,6 +1,6 @@
 ### oxigraph docker image:
 
-ocker run --rm -v $PWD/oxindex:/data -p 7878:7878 oxigraph/oxigraph --location /data serve --bind 0.0.0.0:7878
+docker run --rm -v $PWD/oxindex:/data -p 7878:7878 oxigraph/oxigraph --location /data serve --bind 0.0.0.0:7878
 
 ##query oxigraph:
 
