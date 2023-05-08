@@ -1,0 +1,11 @@
+graphdb=$1
+data=$2
+
+## Load data
+echo "Loading ${data} into RDFStar"
+${graphdb}/bin/importrdf preload  -c RDFStar ${data}
+
+## GraphDB
+echo "Starting GraphDB server..."
+nohup ${graphdb}/bin/graphdb -Xms5g -Xmx20g -Dgraphdb.workbench.importDirectory=${graphdb}/data -Dgraphdb.workbench.maxUploadSize=2009715200 -Dgraphdb.connector.port=7220 > out_graphdb-server &
+echo "GraphDB server started - log in 'out_graphdb-server'"

@@ -1,0 +1,18 @@
+stardog=$1
+data=$2
+
+## start stardog server: 
+echo "Starting Stardog server..."
+${stardog}/bin/stardog-admin server start 
+echo "Stardog server started"
+
+## stadog creating RDF-star database; should use edge.properties=true argument
+echo "Loading ${data}..."
+${stardog}/bin/stardog-admin db create -n starbench -o edge.properties=true  -- ${data}
+
+##Bulk loading data to new database starDB.
+#Loaded 94,662,890 triples to starDB from 1 file(s) in 00:17:48.309 @ 88.6K triples/sec.
+#Successfully created database 'starbench'.
+## set querytimeout
+${stardog}/bin/stardog-admin metadata set -o  query.timeout=30m -- starbench
+echo "${data} loaded"

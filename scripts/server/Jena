@@ -1,0 +1,13 @@
+jena=$1
+fuseki=$2
+db=$3
+data=$4
+
+## Loading:
+echo "Loading ${data} into ${db}"
+${jena}/bin/tdb2.tdbloader --loc ${db} ${data}
+
+## Starting Fuseki server
+echo "Starting Fuseki server..."
+nohup java -jar ${fuseki}/fuseki-server.jar --loc=${db} /rdfstar > out_fuseki-server &
+echo "Fuseki server started - log in 'out_fuseki-server'"

@@ -1,0 +1,16 @@
+queries=$1
+ip=$2
+
+mkdir results
+mkdir results/oxigraph
+mkdir results/oxigraph/Queries
+mkdir results/oxigraph/REF
+
+#Running queries:
+for filename in ${queries}/*.rq; do ##change
+ts=$(date +%s%N)
+#timeout 1810s 
+query=$(<${filename})
+timeout 1800s curl --silent -X POST -H "Accept: application/sparql-results+json" -H "Content-Type: application/sparql-query" --data "${query}" http://${ip}:7878/query >> results/oxigraph/${filename}
+echo "${filename};$((($(date +%s%N) - $ts)/1000000))"
+done

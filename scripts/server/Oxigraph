@@ -1,0 +1,10 @@
+data=$1
+
+### oxigraph docker image:
+echo "Starting Oxigraph server..."
+nohup docker run --rm -v $PWD/oxindex:/data -p 7878:7878 oxigraph/oxigraph --location /data serve --bind 0.0.0.0:7878 > out_oxigraph-server &
+echo "Oxigraph server started - log in 'out_oxigraph-server'"
+
+##load data:
+echo "Loading ${data}..."
+curl http://localhost:7878/store?default -H 'Content-Type: text/turtle' -d@./${data}

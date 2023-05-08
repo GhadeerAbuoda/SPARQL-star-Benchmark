@@ -1,9 +1,0 @@
-## Loading:
- /apache-jena-4.1.0/bin/tdb2.tdbloader --loc dataset.ttls
-
-#Running queries:
-for filename in *.rq; do ##change 
-Var1="${filename}";
-loc="/index/"
-bash  /apache-jena-4.1.0/bin/tdb2.tdbquery --loc $loc --query $Var1 --time 
-done

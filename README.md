@@ -38,3 +38,7 @@ To execute queries on an RDF-star dataset in TDB2 using Apache Jena, use the tdb
 - [Queries](Queries): contains the final list of variations that we included in contains the final list of variations that we extended from the REF benchmark and included in the paper. 
 - REF: contains the original queries from REF benchmark. The list can be found [here](https://github.com/dgraux/RDFStarObservatory/tree/master/testSuits/REF-Benchmark/BKR)
 - [scripts](scripts): contains the bash files used to execute the queries for the four graph engines in addition to essential configurations.
+
+#### License
+
+Queries distributed under CC-BY 4.0 license, scripts/code under ASL-2.0 license. The directories each contain their respective licenses.
