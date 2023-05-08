@@ -1,4 +1,4 @@
-# On Benchmarking RDF-star triplestores with StarBench
+# On Benchmarking RDF-star triplestores with StarBenchj
 
 # Overview
 RDF-star is an extension of RDF that allows for more expressive relationships, enabling more powerful applications and use cases. Adoption of RDF-star may result in increased utilization of RDF triplestores capable of supporting its applications. Support for RDF-star in existing RDF triplestores allows for seamless integration, but further research is needed to enhance their capabilities. We developed StarBench, a SPARQL-star benchmark to evaluate RDF triplestores' performance in handling RDF-star and SPARQL-star queries. The evaluation revealed that certain RDF triplestores would benefit from optimization techniques specifically designed for RDF-star, emphasizing the need for additional research and development in this area.
