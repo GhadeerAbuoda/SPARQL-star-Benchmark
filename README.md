@@ -1,7 +1,9 @@
 
 # On Benchmarking RDF-star triplestores with StarBench
 **Title:** StarBench: Benchmarking RDF-star Triplestores
+
 **Abstract:** RDF-star has rapidly gained popularity as a way to annotate RDF statements while avoiding the disadvantages of reification. Hence, a number of triplestores supporting this new standard have become available. Yet, it is difficult to assess the performance of each of the systems and to which degree they support RDF-star and the corresponding SPARQL-star query language. Hence, in this paper, we propose StarBench, a benchmark for testing SPARQL-star support and runtime performance. We ran StarBench on a number of state-of-the-art triplestores with RDF-star and SPARQL-star support and share our findings. Based on these findings, we highlight existing challenges and research opportunities.
+
 **Submitted to** ISWC 2023 Resource track
 
 ### See our [website](https://relweb.cs.aau.dk/starbench) for more info.
