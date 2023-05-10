@@ -13,10 +13,15 @@ RDF-star is an extension of RDF that allows for more expressive relationships, e
 
 ## RDF Triplestores
 We executed the following triplestores over our benchmark:
-- [Apache Jena](https://jena.apache.org/): Version 4.1.0 with TDB version 2: We used the default configuration for the TDB loader. We used Fuseki for the server and curl to execute the queries.
-- [Oxigraph](https://github.com/oxigraph): Version 2.0 using the project's docker image and curl to execute the queries.
+- [Apache Jena](https://jena.apache.org/): Version 4.7.0 with TDB version 2: We used the default configuration for the TDB loader. We used Fuseki for the server and curl to execute the queries.
+- [Oxigraph](https://github.com/oxigraph): Version 0.3.16 using the project's docker image and curl to execute the queries.
 - [Stardog](https://www.stardog.com/): Version 8.1.0, Default configurations except for the query timeout, we changed it from 3 seconds to 30 minutes (the timeout threshold for all the queries in our experiments).
 - [GraphDB](https://graphdb.ontotext.com/): Version 10.0.2, installed as a standalone server and curl to execute the encoded queries.
+- [AnzoGraph](https://cambridgesemantics.com/anzograph/): Version 2.5.16, installed as a standalone Jetty server and curl to execute the queries.
+- [BlazeGraph](https://blazegraph.com/): Version 2.1.6, installed as a standalone Jetty server and curl to execute the queries.
+
+AnzoGraph and BlazeGraph were not able to load the datasets, and have therefore been omitted from our experiments.
+AnzoGraph threw a "too many properties" error, and BlazeGraph a Parsing error.
 
 ## Dataset & Queries
 #### Dataset
